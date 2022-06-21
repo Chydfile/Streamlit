@@ -32,7 +32,7 @@ def GPT_Completion(texts, key):
 
 try:
     form_0 = st.form(key='my-form0')
-    key = form_0.text_input('Key for OpenAI')
+    key = form_0.text_input('API Key for OpenAI')
     submit_0 = form_0.form_submit_button('Submit')
 
 except Exception as e:
@@ -45,9 +45,9 @@ try:
     submit = form_1.form_submit_button('Submit')
 
     if submit:
-        recipe = 'Tell fairy tail about {}.'.format(command)
+        recipe = 'Tell fairytail about {}.'.format(command)
         responce = GPT_Completion(recipe, key)
-        st.text_area('Fairy tail about {}:'.format(command), responce)
+        st.text_area('Fairytail about {}:'.format(command), responce)
         language = 'en'
         myobj = gTTS(text=responce, lang=language, slow=False)
         myobj.save("welcome.mp3")
