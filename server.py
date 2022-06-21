@@ -8,8 +8,8 @@ import uuid
 import os
 from gtts import gTTS
 
-st.set_page_config(page_title="Crontab - Shritam")
-st.title('Fairytail generation')
+
+st.title('Fairytail Generation')
 st.image("https://i.postimg.cc/yN20YX4F/Stories.png", use_column_width=True)
 #keywords = ['Princess stuck in tower', 'Dragon and birds','Little boy, who disobey parent','Sun day','Little plant', 'Dinosaur and men']
 keywords = ['Flowers and bees']
@@ -40,7 +40,7 @@ except Exception as e:
 
 try:
     form_1 = st.form(key='my-form1')
-    command = form_1.selectbox("Choose your hero",
+    command = form_1.selectbox("Choose your story character",
 ('knight','princess', 'dragon', 'dog', 'king'))
     submit = form_1.form_submit_button('Submit')
 
