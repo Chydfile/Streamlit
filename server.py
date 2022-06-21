@@ -4,10 +4,6 @@ import numpy as np
 import pandas as pd
 import openai
 import uuid
-%load_ext autoreload
-%autoreload 1
-%reload_ext autoreload
-import pandas as pd
 
 st.title('Fairytail generation')
 st.image("https://i.postimg.cc/yN20YX4F/Stories.png", use_column_width=True)
