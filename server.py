@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import pandas as pd
 st.title('Fairytail generation')
+st.image("https://s.wsj.net/public/resources/images/BN-IS945_london_G_20150603154805.jpg", use_column_width=True)
 
 
 # add_selectbox = st.sidebar.selectbox(
