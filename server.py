@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import streamlit as st
 import sys
 import numpy as np
@@ -15,7 +16,7 @@ keywords = ['Flowers and bees']
 
 def GPT_Completion(texts):
     ## Call the API key under your account (in a secure way)
-    openai.api_key = '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'
+    openai.api_key = 'sk-frXvTud0CBEIqZ33z33LT3BlbkFJJTUQammxhA4ppfP8Br'
     response = openai.Completion.create(
     engine="text-davinci-002",
     prompt =  texts,
@@ -44,13 +45,13 @@ def GPT_Completion(texts):
 try:
     form_1 = st.form(key='my-form1')
     command = form_1.selectbox("Choose your hero",
-('Knight','Princess', 'Dragon', 'Dog', 'King'))
+('knight','princess', 'dragon', 'dog', 'king'))
     submit = form_1.form_submit_button('Submit')
 
     if submit:
         recipe = 'Tell fairy tail about {}.'.format(command)
         responce = GPT_Completion(recipe)
-        st.write(responce)
+        st.text_area('Fairy tail about {}:'.format(command), responce)
         language = 'en'
         myobj = gTTS(text=responce, lang=language, slow=False)
         myobj.save("welcome.mp3")
