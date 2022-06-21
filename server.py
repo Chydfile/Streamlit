@@ -6,9 +6,8 @@ import openai
 import uuid
 
 st.title('Fairytail generation')
-
+key = st.text_input("enter key")
 st.image("https://i.postimg.cc/yN20YX4F/Stories.png", use_column_width=True)
-KEY = ""
 #keywords = ['Princess stuck in tower', 'Dragon and birds','Little boy, who disobey parent','Sun day','Little plant', 'Dinosaur and men']
 keywords = ['Flowers and bees']
 
@@ -32,7 +31,7 @@ recipe = 'Tell me fairyrail about {district_type}'
 
 def GPT_Completion(texts):
     ## Call the API key under your account (in a secure way)
-    openai.api_key = "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"
+    openai.api_key = key
     response = openai.Completion.create(
     engine="text-davinci-002",
     prompt =  texts,
