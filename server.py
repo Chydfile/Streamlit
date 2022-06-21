@@ -18,5 +18,5 @@ st.title('Fairytail generation')
 # st.sidebar.write('В демонстационной версии использованы не все доступные признаки. Инструмент, выбранный для предсказания - Сatboost.')
 district_type = st.selectbox(
 "Choose your hero",
-('Apartment', 'House', 'Condominium', 'Boat', 'Hostel'))
+('Dragon', 'Princess', 'Knight', 'Dog', 'King'))
 
