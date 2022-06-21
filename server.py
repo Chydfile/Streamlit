@@ -6,8 +6,9 @@ import openai
 import uuid
 
 st.title('Fairytail generation')
+
 st.image("https://i.postimg.cc/yN20YX4F/Stories.png", use_column_width=True)
-KEY = "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"
+KEY = ""
 #keywords = ['Princess stuck in tower', 'Dragon and birds','Little boy, who disobey parent','Sun day','Little plant', 'Dinosaur and men']
 keywords = ['Flowers and bees']
 
