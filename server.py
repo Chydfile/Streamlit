@@ -2,11 +2,18 @@ import streamlit as st
 import sys
 import numpy as np
 import pandas as pd
-!pip install openai
-!git clone https://github.com/AI-Fairytales/GPT3
-!wget https://raw.githubusercontent.com/AI-Fairytales/GPT-3/master/merged_clean2.txt
+import openai
+import uuid
+%load_ext autoreload
+%autoreload 1
+%reload_ext autoreload
+import pandas as pd
+
 st.title('Fairytail generation')
 st.image("https://i.postimg.cc/yN20YX4F/Stories.png", use_column_width=True)
+KEY = "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"
+#keywords = ['Princess stuck in tower', 'Dragon and birds','Little boy, who disobey parent','Sun day','Little plant', 'Dinosaur and men']
+keywords = ['Flowers and bees']
 
 
 # add_selectbox = st.sidebar.selectbox(
@@ -24,3 +31,23 @@ district_type = st.selectbox(
 "Choose your hero",
 ('Knight','Princess', 'Dragon', 'Dog', 'King'))
 
+recipe = 'Tell me fairyrail about {district_type}' 
+
+def GPT_Completion(texts):
+    ## Call the API key under your account (in a secure way)
+    openai.api_key = "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"
+    response = openai.Completion.create(
+    engine="text-davinci-002",
+    prompt =  texts,
+    temperature = 0.8,
+    top_p = 1,
+    max_tokens = 2000,
+    frequency_penalty = 0,
+    presence_penalty = 0,
+    n = 1
+    )
+    print(response.choices[0].text)
+    #print(response.choices[1].text)
+    return response.choices[0].text
+
+responce = GPT_Completion(recipe)
