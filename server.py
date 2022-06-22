@@ -48,6 +48,7 @@ try:
         recipe = 'Tell fairytail about {}.'.format(command)
         responce = GPT_Completion(recipe, key)
         st.text_area('Fairytail about {}:'.format(command), responce)
+        st.download_button('Download text of fairytail', responce)
         language = 'en'
         myobj = gTTS(text=responce, lang=language, slow=False)
         myobj.save("welcome.mp3")
